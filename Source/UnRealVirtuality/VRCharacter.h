@@ -7,6 +7,8 @@
 #include "VRCharacter.generated.h"
 class UCameraComponent;
 class USceneComponent;
+class UStaticMeshComponent;
+
 UCLASS()
 class UNREALVIRTUALITY_API AVRCharacter : public ACharacter
 {
@@ -27,9 +29,18 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 	
+	void UpdateDestinationMarker();
+
 	UPROPERTY(VisibleAnywhere)
  	UCameraComponent* Camera = nullptr;
 
 	UPROPERTY(VisibleAnywhere)
  	USceneComponent* VRRoot = nullptr;
+
+	UPROPERTY(VisibleAnywhere)
+ 	UStaticMeshComponent* DestinationMarker = nullptr;
+
+	UPROPERTY(EditAnywhere)
+	float MaxTeleportDistance = 20.0;
+
 };
