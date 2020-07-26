@@ -10,7 +10,17 @@
 		}
 	],
 	"settings": {
-		"typescript.tsc.autoDetect": "off"
+		"typescript.tsc.autoDetect": "off",
+		"files.associations": {
+			"regex": "cpp",
+			"xlocale": "cpp",
+			"xstring": "cpp",
+			"tuple": "cpp",
+			"__locale": "cpp",
+			"__string": "cpp",
+			"string": "cpp",
+			"string_view": "cpp"
+		}
 	},
 	"extensions": {
 		"recommendations": [

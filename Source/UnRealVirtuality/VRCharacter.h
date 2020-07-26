@@ -8,6 +8,10 @@
 class UCameraComponent;
 class USceneComponent;
 class UStaticMeshComponent;
+class UMotionControllerComponent;
+class UCurveFloat;
+class USplineComponent;
+class AHandController;
 
 UCLASS()
 class UNREALVIRTUALITY_API AVRCharacter : public ACharacter
@@ -29,8 +33,6 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 	
-	void UpdateDestinationMarker();
-
 	UPROPERTY(VisibleAnywhere)
  	UCameraComponent* Camera = nullptr;
 
@@ -38,7 +40,16 @@ public:
  	USceneComponent* VRRoot = nullptr;
 
 	UPROPERTY(VisibleAnywhere)
+ 	USplineComponent* TeleportPath = nullptr;
+
+	UPROPERTY(VisibleAnywhere)
  	UStaticMeshComponent* DestinationMarker = nullptr;
+
+	UPROPERTY(VisibleAnywhere)
+ 	AHandController* LeftController = nullptr;
+
+	UPROPERTY(VisibleAnywhere)
+ 	AHandController* RightController = nullptr;
 
 	UPROPERTY(EditAnywhere)
 	float MaxTeleportDistance = 20.0;
@@ -46,9 +57,30 @@ public:
 	UPROPERTY(EditAnywhere)
 	float TeleportFadeTime = 1.0;
 
+	UPROPERTY(EditAnywhere)
+	float TeleportProjectileRadius = 10.0;
+
+	UPROPERTY(EditAnywhere)
+	float TeleportProjectileSpeed = 800.0;
+
+	UPROPERTY(EditAnywhere)
+	float TeleportSimulationTime = 1.0;
+
+	UPROPERTY(EditAnywhere)
+	FVector TeleportProjectionExtent = FVector(100,100,100); 
+
+	bool FindTeleportDestination(TArray<FVector> &OutPath, FVector &OutLocation);
+
+	void UpdateDestinationMarker();
+
+	void UpdateSpline(const TArray<FVector> &Path);
+
 	void BeginTeleport();
 
 	void FinishTeleport();
+
+	UPROPERTY(EditAnywhere)
+	UCurveFloat* RadiusVsVelocity;
 
 
 };

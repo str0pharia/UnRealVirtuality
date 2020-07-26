@@ -2,15 +2,15 @@
 	"source": "UE",
 	"applications": [
 		{
-			"app_key": "application.generated.ue.unrealvirtuality-13144385.ue4editor.exe",
+			"app_key": "application.generated.ue.unrealvirtuality-13594126.ue4editor.exe",
 			"launch_type": "url",
 			"url": "steam://launch/",
-			"action_manifest_path": "C:/Users/Str0pharia/UnRealVirtuality/Config/SteamVRBindings/steamvr_manifest.json",
+			"action_manifest_path": "C:/Users/str0p/Documents/UnRealVirtuality/Config/SteamVRBindings/steamvr_manifest.json",
 			"strings":
 			{
 				"en_us":
 				{
-					"name": "UnRealVirtuality-13144385 [UE Editor]"
+					"name": "UnRealVirtuality-13594126 [UE Editor]"
 				}
 			}
 		}
