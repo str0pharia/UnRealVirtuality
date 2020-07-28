@@ -6,6 +6,8 @@
 #include "GameFramework/Actor.h"
 #include "AirBalloonBasket.generated.h"
 
+class UStaticMeshComponent;
+
 UCLASS()
 class UNREALVIRTUALITY_API AAirBalloonBasket : public AActor
 {
@@ -22,5 +24,22 @@ protected:
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
+
+
+	private: 
+
+	UStaticMeshComponent* Basket = nullptr;
+	
+	UStaticMeshComponent* Balloon = nullptr;
+
+	UPROPERTY(EditAnywhere)
+	bool bAutoMoveForward = false;
+
+	
+	UPROPERTY(EditAnywhere)
+	float ForwardVelocity = 10000000.0;
+
+	UPROPERTY(EditAnywhere)
+	float UpwardBaseVelocity = 1000000.0;
 
 };

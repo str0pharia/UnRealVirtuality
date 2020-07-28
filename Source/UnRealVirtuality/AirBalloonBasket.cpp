@@ -9,12 +9,15 @@ AAirBalloonBasket::AAirBalloonBasket()
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
+	Basket = (UStaticMeshComponent*)GetDefaultSubobjectByName(TEXT("Basket"));
 }
 
 // Called when the game starts or when spawned
 void AAirBalloonBasket::BeginPlay()
 {
 	Super::BeginPlay();
+
+	
 	
 }
 
@@ -23,5 +26,15 @@ void AAirBalloonBasket::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+	((UStaticMeshComponent*)GetRootComponent())->AddForce(GetActorUpVector() * UpwardBaseVelocity);
+
+	if ( bAutoMoveForward ) {
+		((UStaticMeshComponent*)GetRootComponent())->AddForce(GetActorForwardVector() * ForwardVelocity);
+
+		if ( Basket != nullptr ) {
+			Basket->AddForce(Basket->GetForwardVector() * ForwardVelocity);
+		}
+
+	}
 }
 
