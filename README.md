@@ -1,5 +1,5 @@
 # UnRealVirtuality
-Hot air balloon game made in Unreal Engine, designed for Virtual Reality headsets and motion controllers. Inspired by that old-school helicopter flash game.
+Hot air balloon game. Inspired by that old-school helicopter flash game.
 
 https://i.ytimg.com/vi/FEcV7JQEiU4/maxresdefault.jpg
 
