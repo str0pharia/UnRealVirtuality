@@ -12,8 +12,9 @@ Designed for virtual reality headsets and motion controllers.
 
 # Controls
 Pull handle to ignite gas and increase altitude, let go of the handle to decrease altitude. 
-Grip sides of basket and lean witth the HMD left or right to tilt the basket, and move the balloon in the corresponding direction along the y-axis (strafe left/right). 
-Note that it's not possible to control movemement along the x-axis (forward movement), nor is it possible to control yaw rotation. 
+Use the weight of the player character to affect sideways movement, and - to some extent - the forward velocity,  by positioning yourself anywhere inside the  basket/play area, in order to redistribute the weight and tilt the basket in the corresponding direction. Lean angle of player / relative angle between controllers (along y-axis) to modify velocity and direction of the balloon even more. Note: To fly in a straight line you will have to maintain balance and remain centered in the play area/basket. 
+
+Note that the yaw rotation of the basket is locked to prevent spin. This is an attempt to make the game more comfortable, especially for those who tend to experience motion sickness. 
 
 
 
