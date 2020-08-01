@@ -38,3 +38,13 @@ void AAirBalloonBasket::Tick(float DeltaTime)
 	}
 }
 
+void AAirBalloonBasket::throttle(float axis) {
+
+	if ( axis <= 0 )
+		return;
+
+	((UStaticMeshComponent*)GetRootComponent())->AddForce(GetActorUpVector() * (ThrottleMaxVelocity * axis));
+
+	
+}
+

@@ -12,6 +12,7 @@ class UMotionControllerComponent;
 class UCurveFloat;
 class USplineComponent;
 class AHandController;
+class AAirBalloonBasket;
 
 UCLASS()
 class UNREALVIRTUALITY_API AVRCharacter : public ACharacter
@@ -46,10 +47,10 @@ public:
  	UStaticMeshComponent* DestinationMarker = nullptr;
 
 	UPROPERTY(VisibleAnywhere)
- 	AHandController* LeftController = nullptr;
+ 	UMotionControllerComponent* LeftController = nullptr;
 
 	UPROPERTY(VisibleAnywhere)
- 	AHandController* RightController = nullptr;
+ 	UMotionControllerComponent* RightController = nullptr;
 
 	UPROPERTY(EditAnywhere)
 	float MaxTeleportDistance = 20.0;
@@ -79,8 +80,20 @@ public:
 
 	void FinishTeleport();
 
+	void throttle(float axis);
+
 	UPROPERTY(EditAnywhere)
 	UCurveFloat* RadiusVsVelocity;
+	
+	AAirBalloonBasket* AirBalloon = nullptr;
 
+	FRotator CachedRotation;
 
+	FVector CachedLocation;
+
+	FRotator DeltaRotation;
+
+	float GetMoveSpeed(FVector velocity, float DeltaTime);
+	
+	FVector GetPositionAndTiltDirection();
 };

@@ -16,21 +16,23 @@ class UNREALVIRTUALITY_API AAirBalloonBasket : public AActor
 public:	
 	// Sets default values for this actor's properties
 	AAirBalloonBasket();
+	// Called every frame
+	virtual void Tick(float DeltaTime) override;
 
+	void throttle(float axis);
+	
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-public:	
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
 
-
-	private: 
+private: 
 
 	UStaticMeshComponent* Basket = nullptr;
 	
 	UStaticMeshComponent* Balloon = nullptr;
+
+
 
 	UPROPERTY(EditAnywhere)
 	bool bAutoMoveForward = false;
@@ -41,5 +43,9 @@ public:
 
 	UPROPERTY(EditAnywhere)
 	float UpwardBaseVelocity = 1000000.0;
+
+	UPROPERTY(EditAnywhere)
+	float ThrottleMaxVelocity = 20000000.0;
+
 
 };
