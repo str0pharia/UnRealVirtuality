@@ -103,26 +103,17 @@ float AVRCharacter::GetScalar_TiltDegrees() {
 
 */
 
-FVector AVRCharacter::GetPositionAndTiltDirection() {
+float AVRCharacter::GetDistanceFromCenter() {
 
 	
-	FVector diff = (FVector)(RightController->GetComponentLocation() - LeftController->GetComponentLocation());
-	FVector dir = (FVector)diff.Normalize();
-	FVector scale = (FVector)diff.Size()*0.5;
-	FVector controllerCenter = LeftController->GetComponentLocation() + dir * scale;
-	FVector diff2 = (FVector)(Camera->GetComponentLocation() - controllerCenter);
-	FVector dir2 = (FVector)diff2.Normalize();
-	FVector scale2 = (FVector)diff2.Size()*0.5;
-	FVector deviceCenter = controllerCenter + dir2 * scale2; // 
-	FVector diff3 = (FVector)(deviceCenter - GetRootComponent()->GetComponentLocation());
-	FVector dir3 =(FVector) diff3.Normalize();
-	return (FVector)(deviceCenter + dir3 * diff3.Size());
+	return (Camera->GetComponentLocation() - GetActorLocation()).Size();
+
 
 }
 
-float AVRCharacter::GetMoveSpeed(FVector velocity, float DeltaTime) {
+FVector AVRCharacter::GetDirection() {
 
-	return (float)((velocity - CachedLocation).Size() * DeltaTime);
+	return (FVector)(GetActorLocation() - Camera->GetComponentLocation()).Normalize();
 }
 
 	
@@ -135,16 +126,10 @@ void AVRCharacter::Tick(float DeltaTime)
 	AddActorWorldOffset(NewCameraOffset);
 	VRRoot->AddWorldOffset(-NewCameraOffset);
 
-	FVector newPos = GetPositionAndTiltDirection();
 	FHitResult HitResult;
-	bool bHit = GetWorld()->LineTraceSingleByChannel(HitResult, Camera->GetComponentLocation() , newPos, ECollisionChannel::ECC_Visibility);
-	DrawDebugLine(GetWorld(),Camera->GetComponentLocation(),newPos,FColor::Red,false,1.0,2.0);
+	bool bHit = GetWorld()->LineTraceSingleByChannel(HitResult, Camera->GetComponentLocation() , (GetActorLocation() - Camera->GetComponentLocation()) , ECollisionChannel::ECC_Visibility);
+	DrawDebugLine(GetWorld(),Camera->GetComponentLocation(),(GetActorLocation() - Camera->GetComponentLocation()),FColor::Red,false,1.0,2.0);
 
-	float speed = GetMoveSpeed(newPos,DeltaTime);
-
-	FVector FinalLocation = (newPos*speed);
-
-	CachedLocation = newPos;
 
 	UpdateDestinationMarker();
 	/*

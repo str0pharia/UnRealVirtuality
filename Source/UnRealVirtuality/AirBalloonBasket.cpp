@@ -48,3 +48,9 @@ void AAirBalloonBasket::throttle(float axis) {
 	
 }
 
+void AAirBalloonBasket::turn(FVector direction, float force) {
+
+	((UStaticMeshComponent*)GetRootComponent())->AddForce(direction * force);
+	
+}
+

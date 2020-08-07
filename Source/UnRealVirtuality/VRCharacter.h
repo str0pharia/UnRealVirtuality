@@ -93,7 +93,7 @@ public:
 
 	FRotator DeltaRotation;
 
-	float GetMoveSpeed(FVector velocity, float DeltaTime);
+	float GetDistanceFromCenter();
 	
-	FVector GetPositionAndTiltDirection();
+	FVector GetDirection();
 };
