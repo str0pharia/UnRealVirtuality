@@ -37,15 +37,13 @@ private:
 	UPROPERTY(EditAnywhere)
 	bool bAutoMoveForward = false;
 
-	
 	UPROPERTY(EditAnywhere)
-	float ForwardVelocity = 10000000.0;
+	float ThrottleForceScalar = 10000000.0;
 
 	UPROPERTY(EditAnywhere)
-	float UpwardBaseVelocity = 1000000.0;
+	float UpwardBaseForceScalar =20000000.0;
 
 	UPROPERTY(EditAnywhere)
-	float ThrottleMaxVelocity = 20000000.0;
-
+	float ForwardBaseForceScalar = 1000000.0;
 
 };
