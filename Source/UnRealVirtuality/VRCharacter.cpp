@@ -152,7 +152,7 @@ void AVRCharacter::Tick(float DeltaTime)
 void AVRCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
-	PlayerInputComponent->BindAxis("RightTriggerAxis", this, &AVRCharacter::throttle);
+	PlayerInputComponent->BindAxis("MotionController_(R) Trigger Axis", this, &AVRCharacter::throttle);
 }
 
 
