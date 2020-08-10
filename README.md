@@ -30,6 +30,9 @@ Note that physics/rotation/velocities will be adjusted in an attempt to make the
 
 - Toy Blocks created by muszka_pietruszka
   - https://www.turbosquid.com/3d-models/kids-toys-bricks-3d-model-1596831
+  
+- Low-Poly Environment by MacKenzie Shirk
+  - https://marketplace-website-node-launcher-prod.ol.epicgames.com/ue/marketplace/en-US/product/stylized-low-poly-environment
 
 
 
