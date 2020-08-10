@@ -17,7 +17,16 @@ Use the weight of the player character to affect sideways movement, and - to som
 
 Note that physics/rotation/velocities will be adjusted in an attempt to make the game as comfortable as possible, especially for those who tend to experience motion sickness. 
 
+# Credits
 
+- Unreal Engine 4.25 (Epic Games)
+
+- VRF Blueprints created by VRFatality
+  https://unrealengine.com/marketplace/en-US/profile/H.E.L.P+RnD?count=20&sortBy=effectiveDate&sortDir=DESC&start=0
+  https://www.youtube.com/channel/UCNcbRQOnqgQNUi28ciydNxA/featured
+    
+- Air Balloon Model created by Chroma3D
+  https://www.cgtrader.com/3d-models/aircraft/other/low-poly-cartoon-hot-air-balloon
 
 
 
