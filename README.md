@@ -15,7 +15,7 @@ Pull handle to ignite gas and increase altitude, let go of the handle to decreas
 
 Use the weight of the player character to affect sideways movement, and - to some extent - the forward velocity,  by positioning yourself anywhere inside the  basket/play area, in order to redistribute the weight and tilt the basket in the corresponding direction. The idea is that the player will have to remain balanced in center to fly in a straight line.
 
-Note that physics/rotation/velocities will be adjusted to in an attempt to make the game as comfortable as possible, especially for those who tend to experience motion sickness. 
+Note that physics/rotation/velocities will be adjusted in an attempt to make the game as comfortable as possible, especially for those who tend to experience motion sickness. 
 
 
 
