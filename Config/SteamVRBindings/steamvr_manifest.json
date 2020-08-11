@@ -78,11 +78,123 @@
 			"requirement": "optional"
 		},
 		{
-			"name": "/actions/main/in/RightTriggerAxis axis",
+			"name": "/actions/main/in/MotionController_(L) ThumbStick Right",
+			"type": "boolean"
+		},
+		{
+			"name": "/actions/main/in/MotionController_(L) ThumbStick Left",
+			"type": "boolean"
+		},
+		{
+			"name": "/actions/main/in/MotionController_(L) Thumbstick Up",
+			"type": "boolean"
+		},
+		{
+			"name": "/actions/main/in/MotionController_(L) Thumbstick Down",
+			"type": "boolean"
+		},
+		{
+			"name": "/actions/main/in/MotionController_(L) Facebutton 1",
+			"type": "boolean"
+		},
+		{
+			"name": "/actions/main/in/MotionController_(L) Facebutton 2",
+			"type": "boolean"
+		},
+		{
+			"name": "/actions/main/in/MotionController_(L) Grip",
+			"type": "boolean"
+		},
+		{
+			"name": "/actions/main/in/MotionController_(L) Trigger ",
+			"type": "boolean"
+		},
+		{
+			"name": "/actions/main/in/MotionController_(R) ThumbStick Right",
+			"type": "boolean"
+		},
+		{
+			"name": "/actions/main/in/MotionController_(R) ThumbStick Left",
+			"type": "boolean"
+		},
+		{
+			"name": "/actions/main/in/MotionController_(R) Thumbstick Up",
+			"type": "boolean"
+		},
+		{
+			"name": "/actions/main/in/MotionController_(R) Thumbstick Down",
+			"type": "boolean"
+		},
+		{
+			"name": "/actions/main/in/MotionController_(R) Facebutton 1",
+			"type": "boolean"
+		},
+		{
+			"name": "/actions/main/in/MotionController_(R) Facebutton 2",
+			"type": "boolean"
+		},
+		{
+			"name": "/actions/main/in/MotionController_(R) Grip",
+			"type": "boolean"
+		},
+		{
+			"name": "/actions/main/in/MotionController_(R) Trigger ",
+			"type": "boolean"
+		},
+		{
+			"name": "/actions/main/in/MotionController_(R) Thumbstick",
+			"type": "boolean"
+		},
+		{
+			"name": "/actions/main/in/MotionController_(L) Thumbstick",
+			"type": "boolean"
+		},
+		{
+			"name": "/actions/main/in/MotionController_(R) ThumbStick touch",
+			"type": "boolean"
+		},
+		{
+			"name": "/actions/main/in/MotionController_(L) Thumbstick touch",
+			"type": "boolean"
+		},
+		{
+			"name": "/actions/main/in/MotionControllerThumbStick_Y axis",
 			"type": "vector1"
 		},
 		{
-			"name": "/actions/main/in/LeftTriggerAxis axis",
+			"name": "/actions/main/in/MotionControllerThumbStick_X,MotionControllerThumbStick_Y X Y_axis2d",
+			"type": "vector2"
+		},
+		{
+			"name": "/actions/main/in/MotionControllerThumbStick_X axis",
+			"type": "vector1"
+		},
+		{
+			"name": "/actions/main/in/MotionController_(L) Grip Axis axis",
+			"type": "vector1"
+		},
+		{
+			"name": "/actions/main/in/MotionController_(L) Trigger Axis axis",
+			"type": "vector1"
+		},
+		{
+			"name": "/actions/main/in/MotionController_(R) Grip Axis axis",
+			"type": "vector1"
+		},
+		{
+			"name": "/actions/main/in/MotionController_(R) Trigger Axis axis",
+			"type": "vector1"
+		},
+		{
+			"name": "/actions/main/in/MotionController_(R) Y Axis axis",
+			"type": "vector1"
+		},
+		{
+			"name": "/actions/main/in/MotionController_(R) ThumbstickTouch axis",
+			"type": "vector1"
+		},
+		{
+			"name": "/actions/main/in/MotionController (L) ThumbstickTouch axis",
 			"type": "vector1"
 		}
 	],
@@ -136,50 +248,6 @@
 		{
 			"controller_type": "vive_tracker_camera",
 			"binding_url": "vive_tracker_camera.json"
-		},
-		{
-			"controller_type": "knuckles",
-			"binding_url": "knuckles.json"
-		},
-		{
-			"controller_type": "vive_controller",
-			"binding_url": "vive_controller.json"
-		},
-		{
-			"controller_type": "vive_cosmos_controller",
-			"binding_url": "vive_cosmos_controller.json"
-		},
-		{
-			"controller_type": "oculus_touch",
-			"binding_url": "oculus_touch.json"
-		},
-		{
-			"controller_type": "holographic_controller",
-			"binding_url": "holographic_controller.json"
-		},
-		{
-			"controller_type": "indexhmd",
-			"binding_url": "indexhmd.json"
-		},
-		{
-			"controller_type": "vive",
-			"binding_url": "vive.json"
-		},
-		{
-			"controller_type": "vive_pro",
-			"binding_url": "vive_pro.json"
-		},
-		{
-			"controller_type": "rift",
-			"binding_url": "rift.json"
-		},
-		{
-			"controller_type": "vive_tracker_camera",
-			"binding_url": "vive_tracker_camera.json"
-		},
-		{
-			"controller_type": "gamepad",
-			"binding_url": "gamepad.json"
 		}
 	],
 	"localization": [
@@ -200,8 +268,36 @@
 			"/actions/main/out/vibrateleft": "Haptic (Left)",
 			"/actions/main/out/vibrateright": "Haptic (Right)",
 			"/actions/main/in/open_console": "Open Console",
-			"/actions/main/in/RightTriggerAxis axis": "RightTriggerAxis",
-			"/actions/main/in/LeftTriggerAxis axis": "LeftTriggerAxis",
+			"/actions/main/in/MotionController_(L) ThumbStick Right": "MotionController_(L) ThumbStick Right",
+			"/actions/main/in/MotionController_(L) ThumbStick Left": "MotionController_(L) ThumbStick Left",
+			"/actions/main/in/MotionController_(L) Thumbstick Up": "MotionController_(L) Thumbstick Up",
+			"/actions/main/in/MotionController_(L) Thumbstick Down": "MotionController_(L) Thumbstick Down",
+			"/actions/main/in/MotionController_(L) Facebutton 1": "MotionController_(L) Facebutton 1",
+			"/actions/main/in/MotionController_(L) Facebutton 2": "MotionController_(L) Facebutton 2",
+			"/actions/main/in/MotionController_(L) Grip": "MotionController_(L) Grip",
+			"/actions/main/in/MotionController_(L) Trigger ": "MotionController_(L) Trigger ",
+			"/actions/main/in/MotionController_(R) ThumbStick Right": "MotionController_(R) ThumbStick Right",
+			"/actions/main/in/MotionController_(R) ThumbStick Left": "MotionController_(R) ThumbStick Left",
+			"/actions/main/in/MotionController_(R) Thumbstick Up": "MotionController_(R) Thumbstick Up",
+			"/actions/main/in/MotionController_(R) Thumbstick Down": "MotionController_(R) Thumbstick Down",
+			"/actions/main/in/MotionController_(R) Facebutton 1": "MotionController_(R) Facebutton 1",
+			"/actions/main/in/MotionController_(R) Facebutton 2": "MotionController_(R) Facebutton 2",
+			"/actions/main/in/MotionController_(R) Grip": "MotionController_(R) Grip",
+			"/actions/main/in/MotionController_(R) Trigger ": "MotionController_(R) Trigger ",
+			"/actions/main/in/MotionController_(R) Thumbstick": "MotionController_(R) Thumbstick",
+			"/actions/main/in/MotionController_(L) Thumbstick": "MotionController_(L) Thumbstick",
+			"/actions/main/in/MotionController_(R) ThumbStick touch": "MotionController_(R) ThumbStick touch",
+			"/actions/main/in/MotionController_(L) Thumbstick touch": "MotionController_(L) Thumbstick touch",
+			"/actions/main/in/MotionControllerThumbStick_Y axis": "MotionControllerThumbStick_Y",
+			"/actions/main/in/MotionControllerThumbStick_X,MotionControllerThumbStick_Y X Y_axis2d": "MotionControllerThumbStick",
+			"/actions/main/in/MotionControllerThumbStick_X axis": "MotionControllerThumbStick_X",
+			"/actions/main/in/MotionController_(L) Grip Axis axis": "MotionController_(L) Grip Axis",
+			"/actions/main/in/MotionController_(L) Trigger Axis axis": "MotionController_(L) Trigger Axis",
+			"/actions/main/in/MotionController_(R) Grip Axis axis": "MotionController_(R) Grip Axis",
+			"/actions/main/in/MotionController_(R) Trigger Axis axis": "MotionController_(R) Trigger Axis",
+			"/actions/main/in/MotionController_(R) Y Axis axis": "MotionController_(R) Y Axis",
+			"/actions/main/in/MotionController_(R) ThumbstickTouch axis": "MotionController_(R) ThumbstickTouch",
+			"/actions/main/in/MotionController (L) ThumbstickTouch axis": "MotionController (L) ThumbstickTouch",
 			"/actions/main": "Main Game Actions"
 		}
 	]
