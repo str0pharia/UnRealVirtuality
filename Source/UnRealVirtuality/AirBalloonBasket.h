@@ -21,17 +21,6 @@ public:
 
 	void throttle(float axis);
 	void turn(FVector direction, float force);
-protected:
-	// Called when the game starts or when spawned
-	virtual void BeginPlay() override;
-
-
-private: 
-
-	UStaticMeshComponent* Basket = nullptr;
-	
-	UStaticMeshComponent* Balloon = nullptr;
-
 
 
 	UPROPERTY(EditAnywhere)
@@ -45,5 +34,17 @@ private:
 
 	UPROPERTY(EditAnywhere)
 	float ForwardBaseForceScalar = 1000000.0;
+
+	UStaticMeshComponent* Basket = nullptr;
+	
+	UStaticMeshComponent* Balloon = nullptr;
+protected:
+	// Called when the game starts or when spawned
+	virtual void BeginPlay() override;
+
+
+
+
+
 
 };
