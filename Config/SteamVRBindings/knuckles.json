@@ -8,13 +8,261 @@
 		{
 			"sources": [
 				{
+					"mode": "dpad",
+					"path": "/user/hand/left/input/thumbstick",
+					"parameters":
+					{
+						"sub_mode": "click"
+					},
+					"inputs":
+					{
+						"east":
+						{
+							"output": "/actions/main/in/MotionController_(L) ThumbStick Right"
+						}
+					}
+				},
+				{
+					"mode": "dpad",
+					"path": "/user/hand/left/input/thumbstick",
+					"parameters":
+					{
+						"sub_mode": "click"
+					},
+					"inputs":
+					{
+						"west":
+						{
+							"output": "/actions/main/in/MotionController_(L) ThumbStick Left"
+						}
+					}
+				},
+				{
+					"mode": "dpad",
+					"path": "/user/hand/left/input/thumbstick",
+					"parameters":
+					{
+						"sub_mode": "click"
+					},
+					"inputs":
+					{
+						"south":
+						{
+							"output": "/actions/main/in/MotionController_(L) Thumbstick Down"
+						}
+					}
+				},
+				{
+					"mode": "button",
+					"path": "/user/hand/left/input/a",
+					"inputs":
+					{
+						"click":
+						{
+							"output": "/actions/main/in/MotionController_(L) Facebutton 1"
+						}
+					}
+				},
+				{
+					"mode": "button",
+					"path": "/user/hand/left/input/b",
+					"inputs":
+					{
+						"click":
+						{
+							"output": "/actions/main/in/MotionController_(L) Facebutton 2"
+						}
+					}
+				},
+				{
+					"mode": "trigger",
+					"path": "/user/hand/left/input/grip",
+					"inputs":
+					{
+						"click":
+						{
+							"output": "/actions/main/in/MotionController_(L) Grip"
+						}
+					}
+				},
+				{
+					"mode": "trigger",
+					"path": "/user/hand/left/input/trigger",
+					"inputs":
+					{
+						"click":
+						{
+							"output": "/actions/main/in/MotionController_(L) Trigger "
+						}
+					}
+				},
+				{
+					"mode": "dpad",
+					"path": "/user/hand/right/input/thumbstick",
+					"parameters":
+					{
+						"sub_mode": "click"
+					},
+					"inputs":
+					{
+						"east":
+						{
+							"output": "/actions/main/in/MotionController_(R) ThumbStick Right"
+						}
+					}
+				},
+				{
+					"mode": "dpad",
+					"path": "/user/hand/right/input/thumbstick",
+					"parameters":
+					{
+						"sub_mode": "click"
+					},
+					"inputs":
+					{
+						"west":
+						{
+							"output": "/actions/main/in/MotionController_(R) ThumbStick Left"
+						}
+					}
+				},
+				{
+					"mode": "dpad",
+					"path": "/user/hand/right/input/trackpad",
+					"parameters":
+					{
+						"sub_mode": "click"
+					},
+					"inputs":
+					{
+						"north":
+						{
+							"output": "/actions/main/in/MotionController_(R) Thumbstick Up"
+						}
+					}
+				},
+				{
+					"mode": "dpad",
+					"path": "/user/hand/right/input/thumbstick",
+					"parameters":
+					{
+						"sub_mode": "click"
+					},
+					"inputs":
+					{
+						"south":
+						{
+							"output": "/actions/main/in/MotionController_(R) Thumbstick Down"
+						}
+					}
+				},
+				{
+					"mode": "button",
+					"path": "/user/hand/right/input/a",
+					"inputs":
+					{
+						"click":
+						{
+							"output": "/actions/main/in/MotionController_(R) Facebutton 1"
+						}
+					}
+				},
+				{
+					"mode": "button",
+					"path": "/user/hand/right/input/b",
+					"inputs":
+					{
+						"click":
+						{
+							"output": "/actions/main/in/MotionController_(R) Facebutton 2"
+						}
+					}
+				},
+				{
+					"mode": "trigger",
+					"path": "/user/hand/right/input/grip",
+					"inputs":
+					{
+						"click":
+						{
+							"output": "/actions/main/in/MotionController_(R) Grip"
+						}
+					}
+				},
+				{
 					"mode": "trigger",
 					"path": "/user/hand/right/input/trigger",
 					"inputs":
 					{
-						"pull":
+						"click":
 						{
-							"output": "/actions/main/in/RightTriggerAxis axis"
+							"output": "/actions/main/in/MotionController_(R) Trigger "
+						}
+					}
+				},
+				{
+					"mode": "joystick",
+					"path": "/user/hand/right/input/thumbstick",
+					"inputs":
+					{
+						"click":
+						{
+							"output": "/actions/main/in/MotionController_(R) Thumbstick"
+						}
+					}
+				},
+				{
+					"mode": "joystick",
+					"path": "/user/hand/left/input/thumbstick",
+					"inputs":
+					{
+						"click":
+						{
+							"output": "/actions/main/in/MotionController_(L) Thumbstick"
+						}
+					}
+				},
+				{
+					"mode": "joystick",
+					"path": "/user/hand/right/input/thumbstick",
+					"inputs":
+					{
+						"touch":
+						{
+							"output": "/actions/main/in/MotionController_(R) ThumbStick touch"
+						}
+					}
+				},
+				{
+					"mode": "joystick",
+					"path": "/user/hand/left/input/thumbstick",
+					"inputs":
+					{
+						"touch":
+						{
+							"output": "/actions/main/in/MotionController_(L) Thumbstick touch"
+						}
+					}
+				},
+				{
+					"mode": "joystick",
+					"path": "/user/hand/left/input/thumbstick",
+					"inputs":
+					{
+						"position":
+						{
+							"output": "/actions/main/in/MotionControllerThumbStick_X,MotionControllerThumbStick_Y X Y_axis2d"
+						}
+					}
+				},
+				{
+					"mode": "force_sensor",
+					"path": "/user/hand/left/input/grip",
+					"inputs":
+					{
+						"force":
+						{
+							"output": "/actions/main/in/MotionController_(L) Grip Axis axis"
 						}
 					}
 				},
@@ -25,7 +273,29 @@
 					{
 						"pull":
 						{
-							"output": "/actions/main/in/LeftTriggerAxis axis"
+							"output": "/actions/main/in/MotionController_(L) Trigger Axis axis"
+						}
+					}
+				},
+				{
+					"mode": "force_sensor",
+					"path": "/user/hand/right/input/grip",
+					"inputs":
+					{
+						"force":
+						{
+							"output": "/actions/main/in/MotionController_(R) Grip Axis axis"
+						}
+					}
+				},
+				{
+					"mode": "trigger",
+					"path": "/user/hand/right/input/trigger",
+					"inputs":
+					{
+						"pull":
+						{
+							"output": "/actions/main/in/MotionController_(R) Trigger Axis axis"
 						}
 					}
 				}
@@ -63,5 +333,5 @@
 			]
 		}
 	},
-	"description": "UnRealVirtuality-13594126"
+	"description": "VRFVOL1MOVEMENT-13594126"
 }
