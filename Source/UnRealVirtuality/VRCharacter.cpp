@@ -152,7 +152,7 @@ void AVRCharacter::Tick(float DeltaTime)
 void AVRCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
-	PlayerInputComponent->BindAxis("MotionController_(R) Trigger Axis", this, &AVRCharacter::throttle);
+	//PlayerInputComponent->BindAxis("MotionController_(R) Trigger Axis", this, &AVRCharacter::throttle);
 }
 
 
@@ -240,14 +240,6 @@ void AVRCharacter::UpdateDestinationMarker() {
 		DestinationMarker->SetVisibility(false);
 		
 	}
-}
-
-void AVRCharacter::throttle(float axis) {
-
-	if (AirBalloon==nullptr)
-		return;
-
-		AirBalloon->throttle(axis);
 }
 
 void AVRCharacter::BeginTeleport() {

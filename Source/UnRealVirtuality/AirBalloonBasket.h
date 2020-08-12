@@ -19,10 +19,6 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-	void throttle(float axis);
-	void turn(FVector direction, float force);
-
-
 	UPROPERTY(EditAnywhere)
 	bool bAutoMoveForward = false;
 

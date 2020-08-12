@@ -27,29 +27,13 @@ void AAirBalloonBasket::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 
 	((UStaticMeshComponent*)GetRootComponent())->AddForce(GetActorUpVector() * UpwardBaseForceScalar);
+
 	if ( bAutoMoveForward ) {
 
 		((UStaticMeshComponent*)GetRootComponent())->AddForce(GetActorForwardVector() * ForwardBaseForceScalar);
 
-		//if ( Basket != nullptr ) {
-		//	Basket->AddForce(Basket->GetForwardVector() * ForwardVelocity);
-		//}
-
 	}
 }
 
-void AAirBalloonBasket::throttle(float axis) {
 
-	if ( axis <= 0 )
-		return;
-
-	((UStaticMeshComponent*)GetRootComponent())->AddForce(GetActorUpVector() * (ThrottleForceScalar * axis));
-
-}
-
-void AAirBalloonBasket::turn(FVector direction, float force) {
-
-	((UStaticMeshComponent*)GetRootComponent())->AddForce(direction * force);
-	
-}
 

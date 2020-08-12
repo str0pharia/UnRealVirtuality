@@ -80,8 +80,6 @@ public:
 
 	void FinishTeleport();
 
-	void throttle(float axis);
-
 	UPROPERTY(EditAnywhere)
 	UCurveFloat* RadiusVsVelocity;
 	
