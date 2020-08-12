@@ -11,14 +11,13 @@ Avoid obstacles and survive for as long as possible. The game ends when the play
 # Gameplay & Design
 Designed for virtual reality headsets and motion controllers. 
 
-. Items & Devices
+## Items & Devices
+  - Spawned as part of / on board the balloon. 
+  - Items may be picked up by the player.
+  - If anything is dropped (outside of basket/gondola), it is lost.
+  - Devices may be interacted with by pushing buttons, turning knobs or pulling levers. 
 
-Spawned as part of / on board the balloon. 
-Items may be picked up by the player.
-If anything is dropped (outside of basket/gondola), it is lost.
-Devices may be interacted with by pushing buttons, turning knobs or pulling levers. 
-
-.. Devices 
+### Devices 
 
 Burners
 Ignites flammable gas to heat air inside the envelope. Pull and hold handle to activate. 
@@ -26,13 +25,13 @@ Ignites flammable gas to heat air inside the envelope. Pull and hold handle to a
 Meters
 Various dials, meters and such, showing wind direction and speed etc. 
 
-.. Items
+### Items
 
-Item: Propane Tanks 
+Propane Tanks 
 Contains flammable gas used to power the balloon. A dial shows remaining gas in tanks. 
 Place a propane tank in one of the assigned slots inside the gondola to refuel the burners.
 
-Item: Longbow
+Longbow
 Use the classic longbow to shoot at things and interact with physics-driven obstacles from a distance, to change the environment and clear a new path. 
 
 # Controls
