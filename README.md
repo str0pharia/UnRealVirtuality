@@ -19,19 +19,19 @@ Designed for virtual reality headsets and motion controllers.
 
 ### Devices 
 
-Burners
+#### Burners
 Ignites flammable gas to heat air inside the envelope. Pull and hold handle to activate. 
 
-Meters
+#### Meters
 Various dials, meters and such, showing wind direction and speed etc. 
 
 ### Items
 
-Propane Tanks 
+#### Propane Tanks 
 Contains flammable gas used to power the balloon. A dial shows remaining gas in tanks. 
 Place a propane tank in one of the assigned slots inside the gondola to refuel the burners.
 
-Longbow
+#### Longbow
 Use the classic longbow to shoot at things and interact with physics-driven obstacles from a distance, to change the environment and clear a new path. 
 
 # Controls
