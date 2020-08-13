@@ -29,7 +29,7 @@ Various dials, meters and such, showing wind direction and speed etc.
 
 #### Propane Tanks 
 Contains flammable gas used to power the balloon. A dial shows remaining gas in tanks. 
-Place a propane tank in one of the assigned slots inside the gondola to refuel the burners.
+Place a propane tank in one of the assigned slots to replace and refuel the burners
 
 #### Longbow
 Use the classic longbow to shoot at things and interact with physics-driven obstacles from a distance, to change the environment and clear a new path. 
@@ -37,7 +37,7 @@ Use the classic longbow to shoot at things and interact with physics-driven obst
 # Controls
 Pull burner handle to ignite gas and increase altitude, let go of the handle to decrease altitude. 
 
-Use the weight of the player character to affect sideways movement, and - to some extent - the forward velocity,  by positioning yourself anywhere inside the  basket/play area, in order to redistribute the weight and tilt the basket in the corresponding direction. The idea is that the player will have to remain balanced in center to fly in a straight line.
+Grab / Hold any of the sides of the basket with one of the motion controllers to tilt basket and cause the balloon to move sideways/strafe in the corresponding direction. 
 
 Wind direction/speed affects how the balloon moves. 
 
