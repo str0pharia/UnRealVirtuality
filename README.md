@@ -47,7 +47,6 @@ Wind direction/speed affects how the balloon moves.
 
 - VRF Blueprints created by VRFatality
   - https://unrealengine.com/marketplace/en-US/profile/H.E.L.P+RnD?count=20&sortBy=effectiveDate&sortDir=DESC&start=0
-  - https://www.youtube.com/channel/UCNcbRQOnqgQNUi28ciydNxA/featured
     
 - Air Balloon Model created by Chroma3D
   - https://www.cgtrader.com/3d-models/aircraft/other/low-poly-cartoon-hot-air-balloon
@@ -58,5 +57,6 @@ Wind direction/speed affects how the balloon moves.
 - Low-Poly Environment by MacKenzie Shirk
   - https://marketplace-website-node-launcher-prod.ol.epicgames.com/ue/marketplace/en-US/product/stylized-low-poly-environment
 
-
+- Low-Poly cloud mesh by creativeart
+  - https://www.cgtrader.com/3d-models/various/various-models/low-poly-clouds-part-01
 
