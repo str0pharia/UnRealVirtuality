@@ -11,7 +11,8 @@ Avoid obstacles and survive for as long as possible. The game ends when the play
 # Gameplay & Design
 Designed for virtual reality headsets and motion controllers. 
 
-https://imgshare.io/image/balloon-scre.NdHEH9
+Screenshot from test of basic procedural obstacle course.
+![Screenshot](https://i.ibb.co/QpgTj76/Capture2.png)
 
 ## Items & Devices
   - Spawned as part of / on board the balloon. 
