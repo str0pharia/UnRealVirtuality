@@ -11,7 +11,7 @@ Avoid obstacles and survive for as long as possible. The game ends when the play
 # Gameplay & Design
 Designed for virtual reality headsets and motion controllers. 
 
-https://imgshare.io/images/2020/08/16/balloon_scre.png
+https://imgshare.io/image/balloon-scre.NdHEH9
 
 ## Items & Devices
   - Spawned as part of / on board the balloon. 
