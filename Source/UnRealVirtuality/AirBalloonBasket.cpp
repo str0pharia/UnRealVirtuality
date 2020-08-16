@@ -25,7 +25,7 @@ void AAirBalloonBasket::BeginPlay()
 void AAirBalloonBasket::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
+/*
 	((UStaticMeshComponent*)GetRootComponent())->AddForce(GetActorUpVector() * UpwardBaseForceScalar);
 
 	if ( bAutoMoveForward ) {
@@ -33,6 +33,8 @@ void AAirBalloonBasket::Tick(float DeltaTime)
 		((UStaticMeshComponent*)GetRootComponent())->AddForce(GetActorForwardVector() * ForwardBaseForceScalar);
 
 	}
+
+*/
 }
 
 
