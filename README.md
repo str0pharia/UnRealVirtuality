@@ -48,9 +48,6 @@ Wind direction/speed affects how the balloon moves.
 
 - Unreal Engine 4.25 (Epic Games)
 
-- VRF Blueprints created by VRFatality
-  - https://unrealengine.com/marketplace/en-US/profile/H.E.L.P+RnD?count=20&sortBy=effectiveDate&sortDir=DESC&start=0
-    
 - Air Balloon Model created by Chroma3D
   - https://www.cgtrader.com/3d-models/aircraft/other/low-poly-cartoon-hot-air-balloon
 
