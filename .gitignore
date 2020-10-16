@@ -72,7 +72,4 @@ Plugins/*/Intermediate/*
 
 # Cache files for the editor to use
 DerivedDataCache/*
-Content/VRF
-Content/Models
-Content/SteamVRAssets
-Content/Sample
+Content/*
