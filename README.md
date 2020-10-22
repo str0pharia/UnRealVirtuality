@@ -1,18 +1,27 @@
 # UnRealVirtuality
-Hot air balloon game. Inspired by that old-school helicopter flash game.
+Hot air balloon game. Inspired by that old-school helicopter flash game, and on-rail arcade shooters. 
 
 https://i.ytimg.com/vi/FEcV7JQEiU4/maxresdefault.jpg
 
-# Concept 
-Pilot a hot air balloon that is automatically moving forward through an endless, procedurally generated environment, filled with obstacles. While also accelerating at an almost imperceptible rate. 
-
-Avoid obstacles and survive for as long as possible. The game ends when the player collides with either an obstacle or the environment, at which point the player is awarded a score based on flight duration/distance covered. 
 
 # Gameplay & Design
 Designed for virtual reality headsets and motion controllers. 
 
-Screenshot from test of basic procedural obstacle course.
+## Game Modes
+
+### Story Mode
+
+Screenshot: Story mode demo development
+![Screenshot](https://i.ibb.co/7z3sBLq/balloon-screen.png)
+
+### Arcade Mode
+
+Screenshot: Testing basic procedural obstacle course, for use in arcade mode. 
 ![Screenshot](https://i.ibb.co/QpgTj76/Capture2.png)
+
+Pilot a hot air balloon that is automatically moving forward through an endless, procedurally generated environment, filled with obstacles. While also accelerating at an almost imperceptible rate. 
+
+Avoid obstacles and survive for as long as possible. The game ends when the player collides with either an obstacle or the environment, at which point the player is awarded a score based on flight duration/distance covered. 
 
 ## Items & Devices
   - Spawned as part of / on board the balloon. 
