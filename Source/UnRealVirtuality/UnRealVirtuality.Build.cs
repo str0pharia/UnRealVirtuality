@@ -8,7 +8,7 @@ public class UnRealVirtuality : ModuleRules
 	{
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 	
-		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "NavigationSystem","HeadMountedDisplay" });
+		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "NavigationSystem","HeadMountedDisplay","GameplayTasks"});
 
 		PrivateDependencyModuleNames.AddRange(new string[] {  });
 

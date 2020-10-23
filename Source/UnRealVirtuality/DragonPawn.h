@@ -33,7 +33,7 @@ public:
 	void LookUpRate(float axis);
 
 	UPROPERTY(BlueprintReadOnly, Category = "");
-	float RotationRate;
+	float RotationRate;	
 
 	UPROPERTY(BlueprintReadOnly);
 	bool IsIdle;

@@ -20,10 +20,10 @@ class UNREALVIRTUALITY_API ADragonAIController : public AAIController
 
 	protected:
 
-		virtual void BeginPlay();
+		virtual void BeginPlay() override;
+		virtual void Tick(float DeltaTime) override;
 
-
-		ADragonPawn* DragonPawn;
+		ADragonPawn* DragonPawn = nullptr;
 
 	private:
 
@@ -32,5 +32,8 @@ class UNREALVIRTUALITY_API ADragonAIController : public AAIController
 
 		UPROPERTY(EditAnywhere)
 		FVector NextNavPoint; 
+
+		UPROPERTY(EditAnywhere)
+		APawn* PlayerPawn = nullptr;
 	
 };
