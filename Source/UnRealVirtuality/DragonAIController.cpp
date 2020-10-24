@@ -20,9 +20,14 @@ void ADragonAIController::BeginPlay()
     if ( Bt != nullptr ) {
 
         RunBehaviorTree(Bt);
-        SetFocalPoint(FVector((4283.061035,-1901.961792,1679.399536)));
-        MoveToLocation(FVector((4283.061035,-1901.961792,1679.399536)));
-
+        if ( PlayerPawn != nullptr)
+        {    
+            GetBlackboardComponent()->SetValueAsVector(TEXT("PlayerPosition"),PlayerPawn->GetActorLocation());
+        }
+        //SetFocalPoint(FVector((4283.061035,-1901.961792,1679.399536)));
+        //MoveToLocation(FVector((4283.061035,-1901.961792,1679.399536)));
+       
+     
     }
 
 
@@ -32,5 +37,12 @@ void ADragonAIController::Tick(float DeltaTime)
 {
 
     Super::Tick(DeltaTime);
+    if ( PlayerPawn != nullptr)
+    {    
+        GetBlackboardComponent()->SetValueAsVector(TEXT("PlayerPosition"),PlayerPawn->GetActorLocation());
+        //SetFocalPoint(PlayerPawn->GetActorLocation());
+        //MoveToLocation(PlayerPawn->GetActorLocation());
+    }
+
 }
 
