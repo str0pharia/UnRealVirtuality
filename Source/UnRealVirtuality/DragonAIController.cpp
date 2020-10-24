@@ -20,8 +20,8 @@ void ADragonAIController::BeginPlay()
     if ( Bt != nullptr ) {
 
         RunBehaviorTree(Bt);
-        SetFocalPoint(FVector(-3816.474121,2243.680664,348.274414));
-        MoveToLocation(FVector(-3816.474121,2243.680664,348.274414));
+        SetFocalPoint(FVector((4283.061035,-1901.961792,1679.399536)));
+        MoveToLocation(FVector((4283.061035,-1901.961792,1679.399536)));
 
     }
 
