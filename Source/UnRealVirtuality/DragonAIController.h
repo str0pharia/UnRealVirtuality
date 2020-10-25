@@ -14,20 +14,7 @@ class ADragonPawn;
  */
 
 
-UENUM(BlueprintType)
-enum EDragonAIState 
-{
-	IDLE_WAIT		UMETA(DisplayName = "Idle"),
-	CHASE			UMETA(DisplayName = "Chase"),
-	FOLLOW_PATH		UMETA(DisplayName = "Follow Path"),
-	ATTACK			UMETA(DisplayName = "Attack"),
-	ATTACK_MOVE		UMETA(DisplayName = "Attack Move"),
-	RAGDOLL			UMETA(DisplayName = "Ragdoll"),
-	DEFEND			UMETA(DisplayName = "Defend"),
-	FROZEN			UMETA(DisplayName = "Frozen"),
-	LAND			UMETA(DisplayName = "Land"),
-	TAKE_OFF		UMETA(DisplayName = "Take Off")
-};
+
 
 UCLASS()
 class UNREALVIRTUALITY_API ADragonAIController : public AAIController
@@ -42,8 +29,6 @@ class UNREALVIRTUALITY_API ADragonAIController : public AAIController
 
 		ADragonPawn* DragonPawn = nullptr;
 
-		UPROPERTY(VisibleAnywhere)
-		TEnumAsByte<EDragonAIState> AIState = EDragonAIState::IDLE_WAIT;
 
 	private:
 

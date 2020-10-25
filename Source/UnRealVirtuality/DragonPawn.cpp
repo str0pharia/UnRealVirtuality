@@ -1,6 +1,9 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
-
+#include "GameFramework/PawnMovementComponent.h"
+#include "GameFramework/PawnMovementComponent.h"
+#include "Kismet/GameplayStatics.h"
+#include "Components/SkeletalMeshComponent.h"
 #include "DragonPawn.h"
 
 // Sets default values
@@ -15,13 +18,17 @@ ADragonPawn::ADragonPawn()
 	Land = false;
 
 	RotationRate = 140;
+
+	DragonMesh = (USkeletalMeshComponent*)GetDefaultSubobjectByName(FName("Mesh"));
+
 }
 
 // Called when the game starts or when spawned
 void ADragonPawn::BeginPlay()
 {
 	Super::BeginPlay();
-	
+	AIState = EDragonAIState::IDLE_WAIT;
+	PrevAIState = AIState;
 }
 
 // Called every frame
@@ -61,5 +68,83 @@ void ADragonPawn::LookUpRate(float axis)
 {
 
 	AddControllerPitchInput(axis * RotationRate * GetWorld()->DeltaTimeSeconds);
+
+}
+
+void ADragonPawn::Update(float DeltaTime)
+{
+
+
+	/*
+	if ( OnGround && d >= Z_THRESHOLD ) 
+	{
+		OnGround = false;
+		GetMesh()->SetEnableGravity(false);
+
+	}
+	else if ( !OnGround && d < Z_THRESHOLD ) 
+	{
+		OnGround = true;
+		GetMesh()->SetEnableGravity(true);
+
+	}
+
+	if ( AIState == EDragonAIState::IDLE_WAIT && !GetVelocity().IsZero() )
+	{
+
+		TransitionToState( EDragonAIState::MOVE );
+
+	}
+
+	*/
+}
+bool ADragonPawn::TransitionToState(EDragonAIState s)
+{
+
+	EDragonAIState t = SetAIState(s);
+
+	return (s != t);
+
+	
+}
+
+float ADragonPawn::DistanceToGround()
+{
+	FHitResult Hit;
+
+	bool bHit = GetWorld()->LineTraceSingleByChannel(Hit, GetActorLocation(), GetActorLocation() - (GetActorUpVector() * TRACE_DISTANCE), ECollisionChannel::ECC_WorldStatic);
+	return (bHit) ? Hit.Distance : TRACE_DISTANCE;
+}
+
+EDragonAIState ADragonPawn::GetAIState() 
+{
+
+	return AIState;
+}
+
+EDragonAIState ADragonPawn::SetAIState(EDragonAIState s) 
+{
+	if ( s != AIState)
+	{
+		PrevAIState = AIState;
+		AIState = s;
+	}
+
+	return AIState;
+}
+
+/* Called from BP when notified by animation BP */
+void ADragonPawn::OnMovementModeChanged(bool walk)
+{
+
+		OnGround = walk;
+
+		if ( nullptr != DragonMesh )
+		{
+			//DragonMesh->SetEnableGravity(walk);
+		
+		}
+
+
 
 }
