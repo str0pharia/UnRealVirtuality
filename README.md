@@ -39,12 +39,8 @@ Various dials, meters and such, showing wind direction and speed etc.
 
 ### Items
 
-#### Propane Tanks 
-Contains flammable gas used to power the balloon. A dial shows remaining gas in tanks. 
-Place a propane tank in one of the assigned slots to replace and refuel the burners
-
 #### Longbow
-Use the classic longbow to shoot at things and interact with physics-driven obstacles from a distance, to change the environment and clear a new path. 
+Use the classic longbow to shoot at things to clear a path, and score points.
 
 # Controls
 Pull burner handle to ignite gas and increase altitude, let go of the handle to decrease altitude. 

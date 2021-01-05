@@ -158,6 +158,22 @@
 			"type": "boolean"
 		},
 		{
+			"name": "/actions/main/in/FireArrowRight",
+			"type": "boolean"
+		},
+		{
+			"name": "/actions/main/in/FireArrowLeft",
+			"type": "boolean"
+		},
+		{
+			"name": "/actions/main/in/GrabRight",
+			"type": "boolean"
+		},
+		{
+			"name": "/actions/main/in/GrabLeft",
+			"type": "boolean"
+		},
+		{
 			"name": "/actions/main/in/MotionControllerThumbStick_Y axis",
 			"type": "vector1"
 		},
@@ -248,6 +264,50 @@
 		{
 			"controller_type": "vive_tracker_camera",
 			"binding_url": "vive_tracker_camera.json"
+		},
+		{
+			"controller_type": "knuckles",
+			"binding_url": "knuckles.json"
+		},
+		{
+			"controller_type": "vive_controller",
+			"binding_url": "vive_controller.json"
+		},
+		{
+			"controller_type": "vive_cosmos_controller",
+			"binding_url": "vive_cosmos_controller.json"
+		},
+		{
+			"controller_type": "oculus_touch",
+			"binding_url": "oculus_touch.json"
+		},
+		{
+			"controller_type": "holographic_controller",
+			"binding_url": "holographic_controller.json"
+		},
+		{
+			"controller_type": "indexhmd",
+			"binding_url": "indexhmd.json"
+		},
+		{
+			"controller_type": "vive",
+			"binding_url": "vive.json"
+		},
+		{
+			"controller_type": "vive_pro",
+			"binding_url": "vive_pro.json"
+		},
+		{
+			"controller_type": "rift",
+			"binding_url": "rift.json"
+		},
+		{
+			"controller_type": "vive_tracker_camera",
+			"binding_url": "vive_tracker_camera.json"
+		},
+		{
+			"controller_type": "gamepad",
+			"binding_url": "gamepad.json"
 		}
 	],
 	"localization": [
@@ -288,6 +348,10 @@
 			"/actions/main/in/MotionController_(L) Thumbstick": "MotionController_(L) Thumbstick",
 			"/actions/main/in/MotionController_(R) ThumbStick touch": "MotionController_(R) ThumbStick touch",
 			"/actions/main/in/MotionController_(L) Thumbstick touch": "MotionController_(L) Thumbstick touch",
+			"/actions/main/in/FireArrowRight": "FireArrowRight",
+			"/actions/main/in/FireArrowLeft": "FireArrowLeft",
+			"/actions/main/in/GrabRight": "GrabRight",
+			"/actions/main/in/GrabLeft": "GrabLeft",
 			"/actions/main/in/MotionControllerThumbStick_Y axis": "MotionControllerThumbStick_Y",
 			"/actions/main/in/MotionControllerThumbStick_X,MotionControllerThumbStick_Y X Y_axis2d": "MotionControllerThumbStick",
 			"/actions/main/in/MotionControllerThumbStick_X axis": "MotionControllerThumbStick_X",

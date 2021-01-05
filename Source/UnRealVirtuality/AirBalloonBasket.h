@@ -31,9 +31,24 @@ public:
 	UPROPERTY(EditAnywhere)
 	float ForwardBaseForceScalar = 1000000.0;
 
+	UPROPERTY(EditAnywhere,BlueprintReadOnly , Category = "Wind")
+	float WindStrength;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Wind")
+	float WindSpeed;
+
+	UPROPERTY(EditAnywhere,BlueprintReadOnly, Category = "Wind")
+	FVector WindDirection;
+
+	TArray<FVector> WindDirectionVectors; 
+
 	UStaticMeshComponent* Basket = nullptr;
 	
 	UStaticMeshComponent* Balloon = nullptr;
+
+	FTimerHandle UpdateWindTimer;
+
+	void UpdateWind();
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
