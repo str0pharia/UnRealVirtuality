@@ -7,21 +7,15 @@ https://i.ytimg.com/vi/FEcV7JQEiU4/maxresdefault.jpg
 # Gameplay & Design
 Designed for virtual reality headsets and motion controllers. 
 
-## Game Modes
-
-### Story Mode
-
-Screenshot: Story mode demo development
-![Screenshot](https://i.ibb.co/7z3sBLq/balloon-screen.png)
-
 ### Arcade Mode
-
-Screenshot: Testing basic procedural obstacle course, for use in arcade mode. 
-![Screenshot](https://i.ibb.co/QpgTj76/Capture2.png)
 
 Pilot a hot air balloon that is automatically moving forward through an endless, procedurally generated environment, filled with obstacles. While also accelerating at an almost imperceptible rate. 
 
 Avoid obstacles and survive for as long as possible. The game ends when the player collides with either an obstacle or the environment, at which point the player is awarded a score based on flight duration/distance covered. 
+
+Screenshot: Testing basic procedural obstacle course, for use in arcade mode. 
+![Screenshot](https://i.ibb.co/dDVWsLV/update.png)
+
 
 ## Items & Devices
   - Spawned as part of / on board the balloon. 
@@ -42,12 +36,45 @@ Various dials, meters and such, showing wind direction and speed etc.
 #### Longbow
 Use the classic longbow to shoot at things to clear a path, and score points.
 
+#### Umbrella
+Foldable umbrella, may be used as a shield while in unfolded state. Unfold by grabbing and moving handle/slider, unfold quickly to 
+produce a wind gust effect and push nearby objects in the opposite direction.
+
+
+## Obstacles
+
+### Cardboard Clouds
+
+#### White
+Predictable movement, moves along horizontal path between two points on the Y-axis.
+
+#### Yellow 
+Unpredictable movement, sudden changes in direction, speed, path
+
+#### Grey
+Produces rain, fog and/Or strong winds and sudden changes in wind direction
+
+#### Dark-Grey/Black
+Produces random lightning bolts
+
+
+### Red Helium Ballons
+
+### Wind Mill
+
+### Bridges / Logs
+
+
 # Controls
 Pull burner handle to ignite gas and increase altitude, let go of the handle to decrease altitude. 
 
 Grab / Hold any of the sides of the basket with one of the motion controllers to tilt basket and cause the balloon to move sideways/strafe in the corresponding direction. 
 
-Wind direction/speed affects how the balloon moves. 
+# Misc.
+
+## Wind direction/speed affects how the balloon moves and changes sporadically 
+
+## Score extra points by disabling, destroying or avoiding obstacles.
 
 # Credits
 
