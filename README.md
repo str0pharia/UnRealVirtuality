@@ -57,15 +57,18 @@ Produces rain, fog and/Or strong winds and sudden changes in wind direction
 #### Dark-Grey/Black
 Produces random lightning bolts
 
-### Red Helium Ballons
-Ballons in different sizes, random/unpredictable movement which is also affected by wind direction and strength/speed. 
-May explode on impact with other obstacles, air balloon/player or arrows.
+### Helium Balloons
 
-### Pink Helium Balloons
+#### Red
+Random/unpredictable movement which is also affected by wind direction and strength/speed. 
+May explode on contact/impact with other obstacles, air balloon/player or arrows.
+
+#### Pink
 If punctured these balloons becomes high-velocity projectiles which are launched with force (like rockets) along a randomized flight path, before finally exploding 
 shortly thereafter.
 
 ### Wind Mill
+Rotating blades, affected by wind direction and strength/speed.
 
 ### Bridges / Logs
 
