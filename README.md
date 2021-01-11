@@ -80,9 +80,9 @@ Grab / Hold any of the sides of the basket with one of the motion controllers to
 
 # Misc.
 
-## Wind direction/speed affects how the balloon moves and changes sporadically 
+### Wind affects how the balloon moves and wind direction and/or strength/speed changes sporadically 
 
-## Score extra points by disabling, destroying or avoiding obstacles.
+### Score extra points by disabling, destroying or avoiding obstacles.
 
 # Credits
 
