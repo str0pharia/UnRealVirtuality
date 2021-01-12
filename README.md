@@ -13,6 +13,9 @@ Pilot a hot air balloon that is automatically moving forward through an endless,
 
 Avoid obstacles and survive for as long as possible. The game ends when the player collides with either an obstacle or the environment, at which point the player is awarded a score based on flight duration/distance covered. 
 
+Screenshot: Updated balloon appearance, and added items/obstacles 
+![Screenshot](https://i.ibb.co/cyC9rQG/update5.png)
+
 Screenshot: Testing basic procedural obstacle course, for use in arcade mode. 
 ![Screenshot](https://i.ibb.co/dt99mb2/update3.png)
 
@@ -99,4 +102,9 @@ Grab / Hold any of the sides of the basket with one of the motion controllers to
 
 - Low-Poly cloud mesh by creativeart
   - https://www.cgtrader.com/3d-models/various/various-models/low-poly-clouds-part-01
+  
+- Longbow & helium balloon models by Valve
+
+- Umbrella model by enzodi24
+  - https://www.turbosquid.com/3d-models/max-umbrella-opening-closing/1016555
 
