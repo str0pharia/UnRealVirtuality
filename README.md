@@ -14,10 +14,10 @@ Pilot a hot air balloon that is automatically moving forward through an endless,
 Avoid obstacles and survive for as long as possible. The game ends when the player collides with either an obstacle or the environment, at which point the player is awarded a score based on flight duration/distance covered. 
 
 Screenshot: Updated balloon appearance, and added items/obstacles 
-![Screenshot](https://i.ibb.co/cyC9rQG/update5.png)
+![Screenshot](https://i.ibb.co/72FRrp5/updat6.png)
 
 Screenshot: Testing basic procedural obstacle course, for use in arcade mode. 
-![Screenshot](https://i.ibb.co/dt99mb2/update3.png)
+![Screenshot](https://i.ibb.co/fDgwMK9/update2.png)
 
 
 ## Items & Devices
