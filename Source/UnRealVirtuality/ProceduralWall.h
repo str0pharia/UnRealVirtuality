@@ -10,8 +10,26 @@
 class FObjectInitializer;
 class USplineComponent;
 class UInstancedStaticMeshComponent;
+class UInstancedStaticMesh;
 
 using namespace ESplineMeshAxis;
+
+
+
+USTRUCT(BlueprintType)
+struct FProceduralMeshInfo 
+{
+	GENERATED_BODY()
+
+	int32 Index;
+
+	FTransform WorldTransform;
+
+	FBoxSphereBounds Bounds;
+
+	FProceduralMeshInfo* LastElement;
+
+};
 
 UCLASS()
 class UNREALVIRTUALITY_API AProceduralWall : public AActor
@@ -34,14 +52,16 @@ public:
 	UPROPERTY(VisibleAnywhere,BlueprintReadOnly, Category = "Procedural Mesh - Offset Next Instance By Distance ")
 	float _Offset = 0;
 
-	UPROPERTY(EditDefaultsOnly,BlueprintReadOnly, Category = "Procedural Mesh - Incremental Offset Per Instance ")
+	UPROPERTY(EditDefaultsOnly,BlueprintReadOnly, Category = "Procedural Mesh - Incremental Offset Per Instance")
 	float _IncrementalOffset = 125.0f;
-
 
 protected:
 	// Called when the game starts or when spawned
 
-public:	
+	struct FProceduralMeshInfo* LastInstanceData;
+
+
+public:	 
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
@@ -49,9 +69,24 @@ public:
 
   	virtual void OnConstruction(const FTransform& Transform) override;
 
+	UFUNCTION(BlueprintCallable, Category = "Prodedural Mesh - Place Mesh")
+	FProceduralMeshInfo PlaceMesh(float Distance);
 
-	UFUNCTION(BlueprintCallable, Category = "Prodedural Mesh")
-	void PlaceMesh(float Distance);
+  	void SetLastInstanceData(FProceduralMeshInfo* Instance);
+
+	FProceduralMeshInfo* GetLastInstanceData();
+
+	struct FProceduralMeshInfo CreateInstance(int32 Index, FTransform T, UInstancedStaticMeshComponent* MeshInstanceComponent);
+	
+	int32 GetIndex(FProceduralMeshInfo* Data);
+
+	FTransform GetTransform(FProceduralMeshInfo* Data);
+
+	FBoxSphereBounds GetBounds(FProceduralMeshInfo* Data);
+
+	float GetRadius(FProceduralMeshInfo* Data);
+
+	float GetNextOffset(FProceduralMeshInfo* Data);
 
 
 
