@@ -6,9 +6,6 @@
 #include "UObject/Interface.h"
 #include "Obstacles.generated.h"
 
-
-class Tiles;
-
 UENUM(BlueprintType)
 enum EObstacleState
 {
@@ -34,50 +31,98 @@ enum EObstacleClass
 UENUM(BlueprintType)
 enum EObstacleType
 {
-	Cloud_White					UMETA(DisplayName = "Cloud White"),	
-	Cloud_Orange				UMETA(DisplayName = "Cloud Orange"),
-	Red_Balloon					UMETA(DisplayName = "Red Balloon"),	
-	Log							UMETA(DisplayName = "Log"),	
-	WindMill					UMETA(DisplayName = "WindMill"),
+	Cloud_White		= 0			UMETA(DisplayName = "Cloud White"),	
+	Cloud_Orange	= 1			UMETA(DisplayName = "Cloud Orange"),
+	Red_Balloon		= 2			UMETA(DisplayName = "Red Balloon"),	
+	Log				= 3			UMETA(DisplayName = "Log"),	
+	WindMill	 	= 4			UMETA(DisplayName = "WindMill"),
 
 };
 
 class AActor;
-// This class does not need to be modified.
+
 UINTERFACE(Blueprintable)
 class UObstacles : public UInterface
 {
 	GENERATED_BODY()
 };
 
-/**
- * 
- */
-
 class UNREALVIRTUALITY_API IObstacles
 {
 	GENERATED_BODY()
+	
+	TEnumAsByte<EObstacleState> EState;
 
-	// Add interface functions to this class. This is the class that will be inherited to implement this interface.
+	TEnumAsByte<EObstacleType> EType;
+
+	bool bFollowingActor;
+
+	float MinMarginFwdAndBwd;
+
+	float MinMarginAboveAndBelow;
+
+	float MinMarginLeftAndRight;
+
+	bool bAffectedByWind;
+
+	float fScore;
+
+	bool bPlayerDetected;
+
+	FVector vMargins;
+
+	AActor* TargetActor;
+
+	FVector TargetLocation;
+
 public:
+	IObstacles() {
 
-	virtual bool IsAffectedByWind() { return false; };
+	}
 
-	virtual float GetScoreValue() { return 0; };
+	virtual bool IsAffectedByWind() 
+	{ 
+		return false; 
+	}
 
-	virtual TEnumAsByte<EObstacleState>  GetObstacleState() { return EObstacleState::Spawning; };
+	virtual float GetScoreValue() 
+	{ 
+		return 0; 
+	}
 
-	virtual TEnumAsByte<EObstacleType>  GetObstacleType() { return EObstacleType::Log; };
+	virtual TEnumAsByte<EObstacleState>  GetObstacleState() 
+	{ 
+		return EObstacleState::Spawning; 
+	}
 
-	virtual float LosRange(FVector Direction) { return 0; };
+	virtual TEnumAsByte<EObstacleType>  GetObstacleType() 
+	{ 
+		return EObstacleType::Log; 
+	}
 
-	virtual FVector GetMargins() { return FVector(0); };
+	virtual float LosRange(FVector Direction)
+	{ 
+		return 0;
+	}
 
-	virtual bool PlayerDetected() { return false; };
+	virtual FVector GetMargins()
+	{ 
+		return FVector(0);
+	}
 
-	virtual TEnumAsByte<EObstacleState>  SwitchState(EObstacleState State) { return EObstacleState::Spawning; };
+	virtual bool PlayerDetected() 
+	{ 
+		return false;
+	}
 
-	virtual void ObstacleEvent() {};
+	virtual TEnumAsByte<EObstacleState> SwitchState(EObstacleState State) 
+	{ 
+		return EObstacleState::Spawning; 
+	}
 
+	virtual void ObstacleEvent() 
+	{
+
+	}
 
 };

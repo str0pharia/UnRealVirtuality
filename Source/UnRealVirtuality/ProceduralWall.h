@@ -88,6 +88,9 @@ public:
 
 	float GetNextOffset(FProceduralMeshInfo* Data);
 
+private:
+
+	struct FRandomStream Randomizer;
 
 
 };

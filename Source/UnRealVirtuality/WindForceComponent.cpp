@@ -52,7 +52,9 @@ void UWindForceComponent::TickComponent(float DeltaTime, ELevelTick TickType, FA
 	if (  PlayerBalloon != nullptr && OwningActorMesh != nullptr )  
 	{
 
-		OwningActorMesh->AddForce(PlayerBalloon->WindDirection * (PlayerBalloon->WindStrength * PlayerBalloon->WindSpeed));
+		//OwningActorMesh->AddForce(PlayerBalloon->WindDirection * (PlayerBalloon->WindStrength * PlayerBalloon->WindSpeed));
+
+		PlayerBalloon->Balloon->AddForce(PlayerBalloon->WindDirection * (PlayerBalloon->WindStrength * PlayerBalloon->WindSpeed));
 
 	}
 

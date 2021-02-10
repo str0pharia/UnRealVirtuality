@@ -4,11 +4,13 @@
 
 #include "CoreMinimal.h"
 #include "UObject/Interface.h"
+#include "Kismet/KismetMathLibrary.h"
 #include "Tiles.generated.h"
 
 
-class IObstacles;
 enum EObstacleType;
+class IObstacles;
+class AActor;
 
 UENUM(BlueprintType)
 enum ETileTag
@@ -35,6 +37,7 @@ UENUM(BlueprintType)
 enum ETileEnvironmentType
 {
 	Undefined			UMETA(DisplayName = "Undefined"),	
+	Plane				UMETA(DisplayName = "Plane"),	
 	Forest				UMETA(DisplayName = "Forest"),	
 	Desert 				UMETA(DisplayName = "Desert"),	
 	Water 				UMETA(DisplayName = "Water"),	
@@ -47,37 +50,40 @@ enum ETileEnvironmentType
 UINTERFACE(Blueprintable)
 class UTiles : public UInterface
 {
-		GENERATED_BODY()
+	GENERATED_BODY()
+
 };
 
-/**
- * 
- */
+
 class UNREALVIRTUALITY_API ITiles
 {
 	GENERATED_BODY()
 
-	// Add interface functions to this class. This is the class that will be inherited to implement this interface.
+
 public:
+	ITiles() {
 
-	FTransform* GetAttachTransform();
+	}
+	virtual FVector GetAttachPoint() {
+		return FVector(0);
+	}
+	virtual void SpawnObstacle(EObstacleType Type) {
 
-	TArray<IObstacles> GetAllObstacles();
+	}
+	virtual int GetNumObstacles() {
+		return 0;
+	}
 
-	void TileEvent();
+	virtual TEnumAsByte<EObstacleType> GetRandomObstacleType() {
+		return (EObstacleType)0;
+	}
 
-	bool TileEventInProgress();
+	virtual TEnumAsByte<ETileEnvironmentType> GetEnvironmentType() {
+		return ETileEnvironmentType::Undefined;
+	}
 
-	void SpawnObstacle();
-
-	void SpawnObstacle(EObstacleType Type);
-
-	int GetNumObstacles();
-
-	TEnumAsByte<EObstacleType> GetRandomObstacleType();
-
-	TArray<ETileTag> GetTileTags();
-
-	TEnumAsByte<ETileEnvironmentType> GetEnvironmentType();
+	virtual FTransform GetTileBounds() {
+		return FTransform();
+	}
 
 };

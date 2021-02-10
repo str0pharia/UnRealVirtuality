@@ -6,7 +6,9 @@
 #include "Components/InstancedStaticMeshComponent.h"
 #include "Components/SplineComponent.h"
 #include "Components/StaticMeshComponent.h"
+#include "Kismet/KismetMathLibrary.h"
 #include "Math/Transform.h"
+#include "Math/RandomStream.h"
 #include "Math/BoxSphereBounds.h"
 #include "Math/Quat.h"
 #include "Math/TransformVectorized.h"
@@ -34,33 +36,23 @@ AProceduralWall::AProceduralWall()
 	_SplinePath->bInputSplinePointsToConstructionScript= true;
 
 	RootComponent = _MeshInstances;
-
+	Randomizer.Initialize(FMath::RandRange(1234,4321));
 }
 
 void AProceduralWall::OnConstruction(const FTransform& Transform)
 {
 
-	_SplinePath->SetLocationAtSplinePoint(1,Transform.InverseTransformPosition(Transform.GetLocation()) + FVector(6000,0,0), ESplineCoordinateSpace::Type::World, true);
+	//_SplinePath->SetLocationAtSplinePoint(1,Transform.InverseTransformPosition(Transform.GetLocation()) + FVector(6000,0,0), ESplineCoordinateSpace::Type::World, true);
 
 	while ( _Offset < _SplinePath->GetSplineLength() ) 
 	{
-
 			FProceduralMeshInfo NextInstanceData = PlaceMesh(_Offset);
-
-			if ( NextInstanceData.LastElement == nullptr || NextInstanceData.LastElement->Index != NextInstanceData.Index ) {
-				return;
-			} 
-			
 			
 			if (GetRadius(&NextInstanceData) > 0.0 )
 			{
 				SetLastInstanceData(&NextInstanceData);
 				_Offset = (_Offset + GetNextOffset(&NextInstanceData));
 			}
-
-			
-
-			
 	}
 
 	Super::OnConstruction(Transform);
@@ -70,41 +62,23 @@ void AProceduralWall::OnConstruction(const FTransform& Transform)
 FProceduralMeshInfo AProceduralWall::PlaceMesh(float Distance) 
 {
 		int32 Index = -1;
+		FVector SpawnAtLocation 	= 	_SplinePath->GetLocationAtDistanceAlongSpline(Distance,ESplineCoordinateSpace::Type::World);
+		FVector RandomDirection 	=	UKismetMathLibrary::RandomUnitVectorInEllipticalConeInDegreesFromStream( GetActorUpVector(),180.0f, 7.0f, Randomizer);
+		FRotator SpawnWithRotation 	= 	UKismetMathLibrary::FindLookAtRotation(SpawnAtLocation, (SpawnAtLocation + RandomDirection).GetSafeNormal() * Distance);
 	
-		
-		float Z_Rotation = FMath::FRandRange(0,180);
-		float X_Rotation = FMath::FRandRange(1,10);
-		float Y_Rotation = FMath::FRandRange(1,15);
-		float Z_Scale= FMath::FRandRange(0.5 , 3);
-		float X_Scale= FMath::FRandRange(0.5 , 3);
-		float Y_Scale = FMath::FRandRange(0.5 , 3);
-		
-		
-		FVector SpawnAtLocation = _SplinePath->GetLocationAtDistanceAlongSpline(Distance,ESplineCoordinateSpace::Type::World);
-		
-		
-		FRotator SpawnWithRotation = _SplinePath->GetRotationAtDistanceAlongSpline(Distance,ESplineCoordinateSpace::Type::World);
+		///UKismetMathLibrary::DynamicWeightedMovingAverage_FRotator(UKismetMathLibrary::RandomRotatorFromStream(false,Randomizer), _SplinePath->GetRotationAtDistanceAlongSpline(Distance,ESplineCoordinateSpace::Type::World), 1.0f, 0.5f, 1.0f);
+		//FVector TransformedDirection = _SplinePath->GetDirectionAtDistanceAlongSpline(Distance,ESplineCoordinateSpace::Type::World);
+		float v 				= 	UKismetMathLibrary::RandomFloatInRangeFromStream(0.4, 1.6, Randomizer);
+		FVector SpawnInScale 	= 	FVector(v,v,v) * v;
+		FTransform TSpawnPoint 	=	_SplinePath->GetTransformAtDistanceAlongSpline(Distance,ESplineCoordinateSpace::Type::World);
+		FTransform FinalTransform( FQuat(SpawnWithRotation), SpawnAtLocation, SpawnInScale);
 
-		FVector TransformedDirection = _SplinePath->GetDirectionAtDistanceAlongSpline(Distance,ESplineCoordinateSpace::Type::World);
-
-
-		FVector SpawnInScale(X_Scale,Y_Scale,Z_Scale);
-	//	FTransform TSpawnPoint =_SplinePath->GetTransformAtDistanceAlongSpline(Distance,ESplineCoordinateSpace::Type::World);
-		FTransform FinalTransform = FTransform( FQuat(SpawnWithRotation + FRotator(0,0,Z_Rotation) ), (SpawnAtLocation + (TransformedDirection.GetSafeNormal() * Distance) ) , SpawnInScale*SpawnInScale);
-
-
-
-
-	
 		//	UKismetMathLibrary::BreakTransform(TempTM, VTranslation, RRotation, VScale);
 		//TSpawnPoint.SetLocation(SpawnLocation);
 		//TSpawnPoint.SetScale3D(FVector(X_Scale, Y_Scale, Z_Scale));
 
-//FQuat(RRotation
-
-
+		//FQuat(RRotation
 		FProceduralMeshInfo ProceduralMeshInfo;
-
 		FInstancedStaticMeshInstanceData Instance;
 
 		Index = _MeshInstances->AddInstance(FinalTransform);
@@ -114,13 +88,11 @@ FProceduralMeshInfo AProceduralWall::PlaceMesh(float Distance)
 
 			ProceduralMeshInfo = CreateInstance(Index,FinalTransform,_MeshInstances);
 
-			
 			//UStaticMesh* StaticMesh = Instance.StaticMesh;
 			//ProceduralMeshInfo->Mesh = StaticMesh;
 			//ProceduralMeshInfo->WorldTransform = Instance.Transform;
 			//ProceduralMeshInfo->Bounds = Instance.CalcBounds(const ProceduralMeshInfo->WorldTransform); 
 			
-
 		} else {
 			ProceduralMeshInfo = FProceduralMeshInfo{ -1, FTransform(), FBoxSphereBounds(), nullptr};
 		}
@@ -154,8 +126,6 @@ FProceduralMeshInfo AProceduralWall::PlaceMesh(float Distance)
 	}
 
 	FProceduralMeshInfo AProceduralWall::CreateInstance(int32 Index, FTransform T, UInstancedStaticMeshComponent * MeshInstanceComponent) {
-
-		
 		FTransform WorldTransform = T;
 		TArray<FInstancedStaticMeshInstanceData> InstanceData = MeshInstanceComponent->PerInstanceSMData;
 		if ( InstanceData.IsValidIndex(Index) ) 
@@ -174,21 +144,18 @@ FProceduralMeshInfo AProceduralWall::PlaceMesh(float Distance)
 	{
 		int32 index = (Data != nullptr) ? Data->Index : -1;
 		return index;
-
 	} 
 
 	FTransform AProceduralWall::GetTransform(FProceduralMeshInfo* Data) 
 	{
 		FTransform T = (Data != nullptr) ? Data->WorldTransform : FTransform();
 		return T;
-
 	} 
 
 	FBoxSphereBounds AProceduralWall::GetBounds(FProceduralMeshInfo* Data) 
 	{
 		FBoxSphereBounds B = (Data != nullptr) ? Data->Bounds : FBoxSphereBounds();
 		return B;
-
 	} 
 
 	float AProceduralWall::GetRadius(FProceduralMeshInfo* Data) 
@@ -197,8 +164,8 @@ FProceduralMeshInfo AProceduralWall::PlaceMesh(float Distance)
 		return R;
 	}
 
-
-	float AProceduralWall::GetNextOffset(FProceduralMeshInfo* Data) {
+	float AProceduralWall::GetNextOffset(FProceduralMeshInfo* Data) 
+	{
 
  		float d = _IncrementalOffset;
 		if (Data != nullptr && Data->LastElement != nullptr ) 
@@ -208,3 +175,5 @@ FProceduralMeshInfo AProceduralWall::PlaceMesh(float Distance)
 		}
 		return d;
 	}
+
+	
